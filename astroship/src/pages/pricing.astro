@@ -1,0 +1,77 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import PricingCard from "@components/pricing.astro";
+
+const pricing = [
+  {
+    name: "Sesión de estrategia",
+    price: "A medida",
+    popular: false,
+    features: [
+      "Sesión de descubrimiento",
+      "Análisis de oportunidades con IA",
+      "Hoja de ruta inicial",
+      "Recomendaciones técnicas",
+      "Presupuesto orientativo",
+    ],
+    button: {
+      text: "Solicitar información",
+      link: "/contact",
+    },
+  },
+  {
+    name: "Proyecto piloto",
+    price: {
+      monthly: "Consultar",
+      annual: "Consultar",
+      discount: "",
+      original: "",
+    },
+    popular: true,
+    features: [
+      "Diseño de solución AI-first",
+      "MVP o PoC en tu entorno",
+      "Integración con tus sistemas",
+      "Formación del equipo",
+      "Soporte post-implementación",
+    ],
+    button: {
+      text: "Hablar con un experto",
+      link: "/contact",
+    },
+  },
+  {
+    name: "Partnership",
+    price: "Custom",
+    popular: false,
+    features: [
+      "Roadmap a largo plazo",
+      "Equipo dedicado",
+      "Arquitectura escalable",
+      "SLA y soporte prioritario",
+      "Innovación continua",
+    ],
+    button: {
+      text: "Contactar",
+      link: "/contact",
+    },
+  },
+];
+---
+
+<Layout title="Precios">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Precios</Fragment>
+      <Fragment slot="desc">
+        Modelos flexibles según tu proyecto. Sin sorpresas.
+      </Fragment>
+    </Sectionhead>
+
+    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-screen-lg mt-12">
+      {pricing.map((item) => <PricingCard plan={item} />)}
+    </div>
+  </Container>
+</Layout>

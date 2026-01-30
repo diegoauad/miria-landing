@@ -1,0 +1,69 @@
+---
+// @ts-ignore
+import { Icon } from "astro-icon/components";
+
+const features = [
+  {
+    title: "Soluciones centradas en IA",
+    description:
+      "Diseñamos e implementamos sistemas que ponen la inteligencia artificial en el núcleo de tu producto o proceso.",
+    icon: "bx:bxs-bot",
+  },
+  {
+    title: "Estrategia y arquitectura",
+    description:
+      "Definimos la hoja de ruta y la arquitectura técnica para que tu inversión en IA sea escalable y sostenible.",
+    icon: "bx:bxs-briefcase",
+  },
+  {
+    title: "Implementación end-to-end",
+    description:
+      "Desde el concepto hasta producción: modelos, APIs, integraciones y despliegue en tu entorno.",
+    icon: "bx:bxs-data",
+  },
+  {
+    title: "Integración con tu stack",
+    description:
+      "Trabajamos con tus tecnologías actuales. Cloud, on-premise o híbrido; nos adaptamos a tu contexto.",
+    icon: "bx:bxs-window-alt",
+  },
+  {
+    title: "ROI medible",
+    description:
+      "Objetivos claros, métricas definidas y resultados tangibles. Te ayudamos a demostrar el valor de la IA.",
+    icon: "bx:bxs-file-find",
+  },
+  {
+    title: "Equipo especializado",
+    description:
+      "Consultores con experiencia en ML, LLMs, datos y producto. Conocimiento profundo y enfoque práctico.",
+    icon: "bx:bxs-user",
+  },
+];
+---
+
+<div class="mt-16 md:mt-0" id="servicios">
+  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
+    Todo lo que necesitas para impulsar tu negocio con IA
+  </h2>
+  <p class="text-lg mt-4 text-slate-600">
+    Combinamos estrategia, tecnología y ejecución. Trabajamos contigo para
+    identificar oportunidades, diseñar soluciones y llevarlas a producción.
+  </p>
+</div>
+
+<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+  {
+    features.map((item) => (
+      <div class="flex gap-4 items-start">
+        <div class="mt-1 bg-black rounded-full  p-2 w-8 h-8 shrink-0">
+          <Icon class="text-white" name={item.icon} />
+        </div>
+        <div>
+          <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
+          <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
+        </div>
+      </div>
+    ))
+  }
+</div>
